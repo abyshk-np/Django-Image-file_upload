@@ -1,0 +1,18 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Profile Pictures</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    {% for profile in profiles %}
+        <div style="text-align: center;">
+            <p><strong>{{ profile.name }}</strong></p>
+            <img src="{{ profile.image.url }}" alt="{{ profile.name }}" width="150">
+        </div>
+    {% empty %}
+        <p>No profiles uploaded yet.</p>
+    {% endfor %}
+</div>
+
+    {% endblock %}

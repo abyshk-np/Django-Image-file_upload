@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Upload</title>
+    {% load static %}
+</head>
+<body>
+
+    
+    <nav>
+        <a href="{% url 'upload_profile' %}">Upload Profile Picture</a> |
+        <a href="{% url 'profile_view' %}">View Profile Picture</a>
+    </nav>
+
+    <hr>
+
+   
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li><strong>{{ message }}</strong></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+   
+    {% block content %}
+    {% endblock content %}
+
+</body>
+</html>
